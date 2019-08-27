@@ -1,0 +1,55 @@
+<br>
+<div class="un">
+<div style="margin-left:300px;"><div class="card" style="width:25rem;">
+    <marquee  height="80px;" direction="left "><b>Welcome to puchunu  Shopping Mall Registration </b></marquee>   
+     <img src="../assets/reg2.jpeg">
+    <form class="text-center border border-light p-5"
+    (ngSubmit)="save()"
+    novalidate
+    [formGroup]="registerForm">
+    <input type="text"
+    id="firstname"
+    class="form-control mb-4"
+    placeholder="Name"
+    required
+    name="firstname"
+    minlength="3"
+    formControlName="firstname"
+    [ngClass]="{'is-invalid':(registerForm.get('firstname').touched || registerForm.get('firstname').dirty) && !registerForm.get('firstname').valid}">
+    <span class="invalid-feedback">
+        <span *ngIf="registerForm.get('firstname').errors?.required">
+            please enter your Name
+        </span>
+        <span *ngIf="registerForm.get('firstname').errors?.minlength">
+            first name should have 3 character
+        </span>
+    </span>
+    <input type="text"
+    id="username"
+    class="form-control mb-4"
+    placeholder="UserName"
+    required
+    minlength="3"
+    formControlName="username"
+    [ngClass]="{'is-invalid':(registerForm.get('username').touched || registerForm.get('username').dirty) &&   !registerForm.get('username').valid}">
+    <span class="invalid-feedback">
+        <span *ngIf="registerForm.get('username').errors?.required">
+            please enter your Name
+        </span>
+        <span *ngIf="registerForm.get('username').errors?.minlength">
+            first name should have 3 character
+        </span>
+    </span>
+
+    <button class="btn btn-primary mr-3"
+    type="submit"
+    style="width:90px"
+    [title]="registerForm.valid? 'save your entered data':'Disabled until the form data is valid'"
+    [disabled]="!registerForm.valid">
+    Register
+    </button>
+    </form>
+    </div></div>
+
+</div>
+   

@@ -1,0 +1,20 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a id='code' class="navbar-brand" [routerLink]="['']"><i class="fa fa-shopping-cart"></i><strong>Online Shopping</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+   <a  class="btn btn-outline-success" routerLink="/home" type="button">Home</a>     
+<a class="btn btn-outline-success" routerLink="/learn" type="button">Learn</a>&nbsp;&nbsp;
+<a  class="btn btn-outline-success" routerLink="/practice" type="button">Practice</a>
+<a class=" btn btn-outline-sucess" routerLink="/reactive" type="button">Reactive From</a>
+
+
+    </div>
+  </div>
+</nav>
+
+
+<router-outlet>

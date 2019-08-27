@@ -1,0 +1,36 @@
+
+<div>
+
+<form class="text"  (ngSubmit)="save(registerForm)"
+ novalidate
+ #registerForm="ngForm"> 
+ {{registerForm.value| json}}
+ 
+ <marquee  height="80px;" direction="left "><b>Welcome to puchunu  Shopping Mall Login </b></marquee>   
+     <img src="../assets/reg2.jpeg">
+    <div class="un">
+<input  class="from-control" id="username" type="text" name="username"  placeholder="username" required
+  [(ngModel)]="register.username" 
+      #userNameVar="ngModel" 
+      [ngClass]="{'is-invalid':(userNameVar.touched || userNameVar.dirty)&& !userNameVar.valid}">
+       <span class="invalid-feedback">
+         <span *ngIf="userNameVar.errors?.required">Please Enter username</span>
+       </span><br><br>
+  
+  <input  class="from-control" id="password" type="text" name="password"  placeholder="password" required
+  [(ngModel)]="register.password" 
+      #userNameVar="ngModel" 
+      [ngClass]="{'is-invalid':(userNameVar.touched || userNameVar.dirty)&& !userNameVar.valid}">
+       <span class="invalid-feedback">
+         <span *ngIf="userNameVar.errors?.required">Please Enter Password</span>
+       </span><br><br>
+  
+
+  <button class="btn btn-success" [disabled]="!registerForm.valid"   [title]="registerForm.valid ? 'Login' : 'Disabled until the form data is valid'">
+    Login
+  </button>
+<a [routerLink]="['/register']">New user?</a>
+  </div>
+</form> 
+
+</div>

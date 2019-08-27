@@ -1,0 +1,46 @@
+
+<div>
+
+<form class="text"  (ngSubmit)="save(registerForm)"
+ novalidate
+ #registerForm="ngForm"> 
+ 
+ <marquee  height="80px;" direction="left "><b>Welcome to puchunu  Shopping Mall Registration </b></marquee>   
+     <img src="../assets/reg2.jpeg">
+    <div class="un">
+<input  class="from-control" id="firstname" type="text" name="firstname"  placeholder="first name" required
+  [(ngModel)]="register.firstname" 
+      #userNameVar="ngModel" 
+      [ngClass]="{'is-invalid':(userNameVar.touched || userNameVar.dirty)&& !userNameVar.valid}">
+       <span class="invalid-feedback">
+         <span *ngIf="userNameVar.errors?.required">Please Enter firstname</span>
+       </span><br><br>
+  
+  <input  class="from-control" id="lastname" type="text" name="lastname"  placeholder="last name" required
+  [(ngModel)]="register.lastname" 
+      #userNameVar="ngModel" 
+      [ngClass]="{'is-invalid':(userNameVar.touched || userNameVar.dirty)&& !userNameVar.valid}">
+       <span class="invalid-feedback">
+         <span *ngIf="userNameVar.errors?.required">Please Enter lastname</span>
+       </span><br><br>
+  
+<input  class="from-control" id="email" type="text" name="email"  placeholder="email" required
+  [(ngModel)]="register.email" 
+      #userNameVar="ngModel" 
+      [ngClass]="{'is-invalid':(userNameVar.touched || userNameVar.dirty)&& !userNameVar.valid}">
+       <span class="invalid-feedback">
+         <span *ngIf="userNameVar.errors?.required">Please Enter Email</span>
+       </span><br><br>
+
+ <button class="btn btn-success" [disabled]="!registerForm.valid" 
+  [title]="registerForm.valid ? 'Login' : 'Disabled until the form data is valid'">
+ Submit
+  </button>&nbsp;&nbsp;
+<button class="btn btn-success" [disabled]="!registerForm.valid" 
+ (click)="users()"  [title]="registerForm.valid ? 'Login' : 'Disabled until the form data is valid'">
+Login
+  </button>
+  </div>
+</form> 
+
+</div>
